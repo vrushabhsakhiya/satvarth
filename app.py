@@ -74,31 +74,33 @@ def ecommerce():
 def contact_us():
     return render_template('contact_us.html')
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact', methods=['POST'])
 def contact():
-    if request.method == 'POST':
-        # 1. Get data from the form
-        form_data = {
-            'name': request.form.get('name'),
-            'email': request.form.get('email'),
-            'phone': request.form.get('phone'),
-            'subject': request.form.get('subject'),
-            'message': request.form.get('message')
-        }
+    form_data = {
+        'name': request.form.get('name'),
+        'email': request.form.get('email'),
+        'phone': request.form.get('phone'),
+        'subject': request.form.get('subject'),
+        'message': request.form.get('message')
+    }
 
-        # 2. Basic Validation
-        if not form_data['name'] or len(form_data['name']) < 2:
-            return jsonify({'success': False, 'message': 'Name is required (min 2 chars).'})
-        if not form_data['email'] or '@' not in form_data['email']:
-            return jsonify({'success': False, 'message': 'Valid email is required.'})
-        if not form_data['message'] or len(form_data['message']) < 10:
-            return jsonify({'success': False, 'message': 'Message must be at least 10 chars.'})
+    # basic validation
+    if not form_data['name'] or len(form_data['name']) < 2:
+        return jsonify(success=False, message="Name is required.")
 
-        # 3. Call the external email function
-        # We pass the 'mail' object and the recipient from Config
-        result = send_contact_email(mail, app.config['RECIPIENT_EMAIL'], form_data)
-        
-        return jsonify(result)
+    if not form_data['email'] or '@' not in form_data['email']:
+        return jsonify(success=False, message="Valid email required.")
+
+    if not form_data['message'] or len(form_data['message']) < 10:
+        return jsonify(success=False, message="Message too short.")
+
+    result = send_contact_email(
+        mail,
+        app.config['RECIPIENT_EMAIL'],
+        form_data
+    )
+
+    return jsonify(result)
 
     # Render the HTML page for GET requests
     return render_template('contact.html')
