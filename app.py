@@ -84,7 +84,7 @@ def contact():
         'message': request.form.get('message')
     }
 
-    # validation
+    # basic validation
     if not form_data['name'] or len(form_data['name']) < 2:
         return jsonify(success=False, message="Name is required.")
 
@@ -94,9 +94,7 @@ def contact():
     if not form_data['message'] or len(form_data['message']) < 10:
         return jsonify(success=False, message="Message too short.")
 
-    # ✅ CALL EMAIL FUNCTION HERE (ONLY HERE)
     result = send_contact_email(
-        app,
         mail,
         app.config['RECIPIENT_EMAIL'],
         form_data
@@ -104,10 +102,8 @@ def contact():
 
     return jsonify(result)
 
-
     # Render the HTML page for GET requests
     return render_template('contact.html')
-result = send_contact_email(app, mail, app.config['RECIPIENT_EMAIL'], form_data)
 
 
  ###################################33
