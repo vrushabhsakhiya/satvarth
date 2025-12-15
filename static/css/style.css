@@ -7369,7 +7369,7 @@ form.form-dark .form-control:focus {
 }
 
 .main-banner.main-banner-2 .banner-inner .banner-conent .counter.counter-style-1 {
-  margin-left: -50px;
+  margin-left: 25px !important;
 }
 
 /*-----------------------------------*/
