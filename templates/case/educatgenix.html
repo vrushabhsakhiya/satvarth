@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include 'sidepanel.html' %}
+
+<div class="site-content service-page">
+
+  <!-- ===============================
+       HERO SECTION
+  =============================== -->
+  <section class="service-hero-section"
+    style="background-image: url('{{ url_for('static', filename='images/banner/api-dev-bg.jpg') }}');">
+
+    <div class="overlay"></div>
+
+    <div class="container text-center hero-content">
+      <h1 class="service-title">Educatgenix</h1>
+      <p class="service-subtitle">
+        Some people will tell you there are four while others may tell you there are eight.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===============================
+       REPORT SECTION (LIGHT)
+  =============================== -->
+  <section class="report-wrapper">
+    <div class="report">
+
+      <div class="content">
+
+        <!-- LEFT -->
+        <div class="left">
+          <p>
+            In education systems and learning theory, learners often encounter conflicting
+            explanations. Some models define education using four core learning categories,
+            while others expand the same concepts into eight detailed learning dimensions.
+          </p>
+
+          <p>
+            This difference creates confusion for students, educators, and institutions.
+            Educatgenix addresses this challenge by treating learning classification as a
+            layered framework rather than a one-size-fits-all model.
+          </p>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 1</div></h4>
+            <strong>The Four-Domain Learning Model</strong>
+            The four-domain model focuses on clarity and structure. It simplifies learning
+            into essential areas, making it ideal for curriculum design, onboarding, and
+            foundational understanding.
+          </div>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 2</div></h4>
+            <strong>The Eight-Domain Learning Model</strong>
+            The eight-domain model expands each core area into refined learning dimensions,
+            enabling deeper personalization, assessment accuracy, and learner development.
+          </div>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 3</div></h4>
+            <strong>Educatgenix’s Adaptive Learning Logic</strong>
+            Educatgenix does not force educators to choose between models. Instead, it applies
+            the appropriate level of learning depth based on context, learner needs, and
+            educational goals.
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+          <div class="info-block">
+            <h5>Platform</h5>
+            <p>Educatgenix Learning Intelligence Framework</p>
+          </div>
+
+          <div class="info-block">
+            <h5>Core Purpose</h5>
+            <p>Structured and adaptive learning classification</p>
+          </div>
+
+          <div class="info-block">
+            <h5>Primary Users</h5>
+            <p>Students, educators, institutions, and EdTech platforms</p>
+          </div>
+
+          <div class="conclusion">
+            <h3>Conclusion</h3>
+            <p>
+              Four domains provide structure. Eight domains provide depth.
+              Educatgenix succeeds by applying both — based on learning context and intent.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===============================
+     STYLES
+=============================== -->
+<style>
+.obj {
+  color: #000000d4;
+}
+
+/* ===============================
+   SERVICE PAGE (DARK)
+=============================== */
+.service-page {
+  background: #292929;
+  color: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* ===============================
+   HERO
+=============================== */
+.service-hero-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.8)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.service-title {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+}
+
+.service-subtitle {
+  font-size: clamp(15px, 2.2vw, 20px);
+  color: #e6f0ff;
+}
+
+/* ===============================
+   REPORT WRAPPER (LIGHT)
+=============================== */
+.report-wrapper {
+  background: #eef3f9;
+  padding: 80px 0;
+  color: #1e293b;
+}
+
+/* REPORT */
+.report {
+  max-width: 1200px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 102, 204, 0.18);
+}
+
+/* GRID */
+.content {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 30px;
+  padding: 40px 50px;
+}
+
+/* LEFT */
+.left p {
+  margin-bottom: 18px;
+  color: #334155;
+}
+
+.objective {
+  background: #f1f6ff;
+  border-left: 6px solid #0b5ed7;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+}
+
+/* RIGHT */
+.right {
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+/* CONCLUSION */
+.conclusion {
+  background: linear-gradient(135deg, #0b5ed7, #2563eb);
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 991px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .report-wrapper {
+    padding: 40px 0;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+</style>
+
+{% include 'footer.html' %}
+{% endblock %}

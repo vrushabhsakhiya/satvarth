@@ -1,0 +1,236 @@
+
+
+
+
+{% extends "base.html" %}
+{% block content %}
+
+{% include 'sidepanel.html' %}
+
+<div class="site-content service-page">
+
+  <!-- ===============================
+       HERO SECTION
+  =============================== -->
+  <section class="service-hero-section"
+    style="background-image: url('{{ url_for('static', filename='images/banner/api-dev-bg.jpg') }}');">
+
+    <div class="overlay"></div>
+
+    <div class="container text-center hero-content">
+      <h1 class="service-title">Foodocity</h1>
+      <p class="service-subtitle">
+        Some people will tell you there are four while others may tell you there are eight.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===============================
+       REPORT SECTION (LIGHT)
+  =============================== -->
+  <section class="report-wrapper">
+    <div class="report">
+
+      <div class="content">
+
+        <!-- LEFT -->
+        <div class="left">
+          <p>
+            In the food and culinary ecosystem, people often encounter different ways of
+            categorizing food experiences. Some frameworks simplify food into four core
+            categories, while others expand the same ideas into eight detailed segments.
+          </p>
+
+          <p>
+            This inconsistency creates confusion for consumers, restaurants, and food
+            platforms. Foodocity resolves this by treating food classification as a
+            layered system rather than a fixed definition.
+          </p>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 1</div></h4>
+            <strong>The Four-Category Food Model</strong>
+            The four-category model focuses on simplicity. It helps users quickly understand
+            broad food preferences, cuisines, and dining styles without overload.
+          </div>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 2</div></h4>
+            <strong>The Eight-Category Food Model</strong>
+            The eight-category model adds precision by breaking each core food category into
+            refined segments, enabling better recommendations and personalization.
+          </div>
+
+          <div class="objective">
+            <h4><div class="obj">Objective 3</div></h4>
+            <strong>Foodocity’s Adaptive Classification</strong>
+            Foodocity does not force a single structure. It dynamically applies either the
+            four-category or eight-category model based on user intent and depth of exploration.
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right">
+          <div class="info-block">
+            <h5>Platform</h5>
+            <p>Foodocity Culinary Intelligence System</p>
+          </div>
+
+          <div class="info-block">
+            <h5>Core Purpose</h5>
+            <p>Smart food discovery and structured culinary insights</p>
+          </div>
+
+          <div class="info-block">
+            <h5>Primary Users</h5>
+            <p>Food lovers, restaurants, chefs, and food-tech platforms</p>
+          </div>
+
+          <div class="conclusion">
+            <h3>Conclusion</h3>
+            <p>
+              Four categories offer clarity. Eight categories deliver accuracy.
+              Foodocity succeeds by using both — depending on taste, context, and depth.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===============================
+     STYLES
+=============================== -->
+<style>
+.obj {
+  color: #000000d4;
+}
+
+/* ===============================
+   SERVICE PAGE (DARK)
+=============================== */
+.service-page {
+  background: #292929;
+  color: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+/* ===============================
+   HERO
+=============================== */
+.service-hero-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.8)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.service-title {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+}
+
+.service-subtitle {
+  font-size: clamp(15px, 2.2vw, 20px);
+  color: #e6f0ff;
+}
+
+/* ===============================
+   REPORT WRAPPER (LIGHT)
+=============================== */
+.report-wrapper {
+  background: #eef3f9;
+  padding: 80px 0;
+  color: #1e293b;
+}
+
+/* REPORT */
+.report {
+  max-width: 1200px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0 25px 60px rgba(0, 102, 204, 0.18);
+}
+
+/* GRID */
+.content {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 30px;
+  padding: 40px 50px;
+}
+
+/* LEFT */
+.left p {
+  margin-bottom: 18px;
+  color: #334155;
+}
+
+.objective {
+  background: #f1f6ff;
+  border-left: 6px solid #0b5ed7;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+}
+
+/* RIGHT */
+.right {
+  background: #f8fbff;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+/* CONCLUSION */
+.conclusion {
+  background: linear-gradient(135deg, #0b5ed7, #2563eb);
+  color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 991px) {
+  .content {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .report-wrapper {
+    padding: 40px 0;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+</style>
+
+{% include 'footer.html' %}
+{% endblock %}

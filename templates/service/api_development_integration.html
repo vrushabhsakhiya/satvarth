@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include 'sidepanel.html' %}
+
+<div class="site-content service-page">
+
+    <!-- ===============================
+         HERO SECTION
+    =============================== -->
+    <section class="service-hero-section"
+        style="background-image: url('{{ url_for('static', filename='images/banner/api-dev-bg.jpg') }}');">
+
+        <div class="overlay"></div>
+
+        <div class="container text-center hero-content">
+            <h1 class="service-title">API Development & Integration</h1>
+            <p class="service-subtitle">
+                Secure and scalable RESTful APIs using Python Django with seamless third-party integrations.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===============================
+         MAIN SECTION
+    =============================== -->
+    <section class="service-main">
+        <div class="container service-row">
+
+            <!-- LEFT CONTENT -->
+            <div class="service-left">
+
+                <span class="service-label">WHAT WE BUILD</span>
+
+                <h2>Reliable, Scalable APIs That Power Your Applications</h2>
+
+                <p>
+                    We design high-performance RESTful APIs using <strong>Django</strong> and
+                    <strong>Django REST Framework</strong>, built for security, speed, and long-term scalability.
+                </p>
+
+                <p>
+                    From payment gateways to cloud services, we integrate third-party platforms that
+                    communicate reliably across systems without bottlenecks.
+                </p>
+
+                <ul class="service-list">
+                    <li>Custom RESTful API development (Django / DRF)</li>
+                    <li>JWT & OAuth authentication workflows</li>
+                    <li>Payment, CRM & analytics integrations</li>
+                    <li>Microservices & modular architecture</li>
+                    <li>Webhooks & real-time data sync</li>
+                </ul>
+
+                <a href="{{ url_for('form') }}" class="service-btn">
+                    Start Your API Project →
+                </a>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="service-right">
+                <img src="{{ url_for('static', filename='images/services/api.png') }}"
+                     alt="API Development"
+                     class="service-img">
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- ===============================
+     STYLES
+=============================== -->
+<style>
+/* ===============================
+   BASE PAGE
+=============================== */
+
+.service-page {
+    background: #000814;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   HERO SECTION (FIXED)
+=============================== */
+
+.service-hero-section {
+    position: relative;
+    min-height: 70vh;               /* 🔥 CONTROLS OVERLAY HEIGHT */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.service-hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* TEXT */
+.service-title {
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-subtitle {
+    font-size: clamp(15px, 2.2vw, 20px);
+    color: #d5e2f0;
+    line-height: 1.6;
+}
+
+/* ===============================
+   MAIN SECTION
+=============================== */
+
+.service-main {
+    padding: 90px 0;
+    background: #000e1d;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* LEFT CONTENT */
+.service-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #4da8ff;
+    font-weight: 600;
+}
+
+.service-left h2 {
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 700;
+    margin: 18px 0 26px;
+}
+
+.service-left p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #d6dbe8;
+    margin-bottom: 18px;
+}
+
+.service-list {
+    margin: 22px 0 32px;
+    padding-left: 18px;
+}
+
+.service-list li {
+    font-size: 16px;
+    color: #aab6c5;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.service-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 40px;
+    border: 1px solid #4da8ff;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+    background: #4da8ff;
+    color: #00101a;
+}
+
+/* IMAGE */
+.service-img {
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.35);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media (max-width: 992px) {
+    .service-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .service-img {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-hero-section {
+        min-height: 40vh;
+        padding: 50px 0 50px;
+    }
+
+    .service-main {
+        padding: 10px 0;
+    }
+
+    .service-left p,
+    .service-list li {
+        font-size: 15px;
+    }
+
+    .service-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+}
+</style>
+
+{% include 'footer.html' %}
+{% endblock %}

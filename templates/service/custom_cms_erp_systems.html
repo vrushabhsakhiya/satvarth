@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% include 'sidepanel.html' %}
+
+<div class="site-content service-page">
+
+    <!-- ===============================
+         HERO SECTION
+    =============================== -->
+    <section class="vision-hero-section inner-header"
+        style="background-image: url('{{ url_for('static', filename='images/service-banner/ui-ux.jpeg') }}');">
+
+        <div class="overlay"></div>
+
+        <div class="container text-center">
+            <h1 class="service-title">Custom CMS & ERP Systems</h1>
+            <p class="service-subtitle">
+                Tailor-made content management and enterprise resource planning systems for modern businesses.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===============================
+         MAIN SECTION
+    =============================== -->
+    <section class="service-main">
+        <div class="container service-row">
+
+            <!-- LEFT CONTENT -->
+            <div class="service-left">
+                <span class="service-label">WHAT WE BUILD</span>
+
+                <h2>Powerful CMS & ERP Systems Built for Your Workflow</h2>
+
+                <p>
+                    We design and develop fully customized CMS and ERP systems that adapt to your internal
+                    workflow instead of forcing your business to adapt to software limitations.
+                </p>
+
+                <p>
+                    From user roles and automation to analytics and integrations, our solutions provide
+                    complete operational control and long-term scalability.
+                </p>
+
+                <ul class="service-list">
+                    <li>Custom CMS for websites & internal tools</li>
+                    <li>Industry-specific ERP modules</li>
+                    <li>User roles, permissions & workflow automation</li>
+                    <li>Inventory, HR, finance & sales management</li>
+                    <li>Third-party API & software integration</li>
+                </ul>
+
+                <a href="{{ url_for('form') }}" class="service-btn">
+                    Start Your CMS / ERP Project →
+                </a>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="service-right">
+                <img src="{{ url_for('static', filename='images/services/cms.png') }}"
+                     alt="CMS & ERP Systems"
+                     class="service-img">
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<!-- ===============================
+     PAGE STYLES
+=============================== -->
+<style>
+/* ===============================
+   CMS & ERP SERVICE PAGE
+=============================== */
+
+.service-page {
+    background: #000814;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===============================
+   HERO SECTION
+=============================== */
+
+.vision-hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.vision-hero-section .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    );
+}
+
+.vision-hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.service-title {
+    font-size: clamp(28px, 5vw, 56px);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.service-subtitle {
+    font-size: clamp(15px, 2.2vw, 20px);
+    max-width: 720px;
+    margin: 0 auto;
+    color: #d5e2f0;
+    line-height: 1.6;
+}
+
+/* ===============================
+   MAIN CONTENT
+=============================== */
+
+.service-main {
+    padding: 90px 0;
+    background: #000e1d;
+}
+
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* LEFT CONTENT */
+.service-label {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #4da8ff;
+    font-weight: 600;
+}
+
+.service-left h2 {
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 700;
+    margin: 16px 0 24px;
+}
+
+.service-left p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #d6dbe8;
+    margin-bottom: 18px;
+}
+
+.service-list {
+    padding-left: 18px;
+    margin: 24px 0 32px;
+}
+
+.service-list li {
+    font-size: 16px;
+    color: #aab6c5;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.service-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    border-radius: 40px;
+    border: 1px solid #4da8ff;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.service-btn:hover {
+    background: #4da8ff;
+    color: #00101a;
+}
+
+/* IMAGE */
+.service-img {
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 150, 255, 0.35);
+}
+
+/* ===============================
+   RESPONSIVE FIXES
+=============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .service-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .service-img {
+        margin: 0 auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .vision-hero-section {
+        padding: 90px 0 70px;
+        min-height: 55vh;
+    }
+
+    .service-main {
+        padding: 5px 0;
+    }
+
+    .service-left p,
+    .service-list li {
+        font-size: 15px;
+    }
+
+    .service-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+}
+</style>
+
+{% include 'footer.html' %}
+{% endblock %}
