@@ -104,6 +104,7 @@ def contact():
 
     # Render the HTML page for GET requests
     return render_template('contact.html')
+result = send_contact_email(app, mail, app.config['RECIPIENT_EMAIL'], form_data)
 
 
  ###################################33
