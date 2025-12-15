@@ -8,7 +8,7 @@ class Config:
     
     # Credentials (Update these with your real details)
     MAIL_USERNAME = '22amtics185@gmail.com'# owner emial
-    MAIL_PASSWORD = ''  # Your App Password
+    MAIL_PASSWORD = 'fewdhodycjigrvli'  # Your App Password
     
     # Default Sender & Recipient
     MAIL_DEFAULT_SENDER = '22amtics185@gmail.com'
