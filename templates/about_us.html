@@ -2,6 +2,7 @@
 {% block content %}
 
 {% include 'sidepanel.html' %}
+
 <style>
   .color-for-year{
     color: rgb(255, 255, 255);
@@ -14,7 +15,7 @@
   <!-- this not error  -->
   <div class="container">
     <div class="row  justify-content-center">
-
+<br><br><br>
       <div class="col-md-12 text-center">
         <br><br>
         <h1 class="title">About Satvarth</h1>
@@ -46,8 +47,8 @@
                 Our team works tirelessly to deliver service you can trust and enjoy.
                 If something’s off, we’ll make it right — because your experience matters most.</p>
               <div class="d-flex justify-content-center mt-5 ms-sm-5 ms-0">
-                <a class="btn btn-effect" href="#">
-                  <span>About Us</span>
+                <a class="btn btn-effect" href="{{ url_for('team')}}">
+                  <span>Our team</span>
                   <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_59_253)">
                       <path
@@ -335,7 +336,7 @@
             </div>
             <div class="team-item team-style-1">
               <div class="team-img">
-                <img class="img-fluid" src="{{ url_for('static',filename='images/team/05.jpg') }}" alt="" />
+                <img class="img-fluid" src="{{ url_for('static',filename='images/team/y1.png') }}" alt="" />
                 <div class="image-overlay"><img class="img-fluid"
                     src="{{ url_for('static',filename='images/team/symbol1.png') }}" alt="" /></div>
               </div>

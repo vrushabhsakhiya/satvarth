@@ -3,108 +3,151 @@
 
 {% include 'sidepanel.html' %}
 <style>
-    .vision-main {
-    padding: 80px 0;
-}
+    /* SPACE BETWEEN NAVBAR AND BODY */
+    .vision-page-update {
+        padding-top: 120px; /* Adjust this value to increase/decrease space from navbar */
+    }
 
-.vision-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
+    /* CUSTOM LAYOUT CLASSES */
+    .container-update {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-.vision-left {
-    flex: 1;
-}
-
-.vision-right {
-    flex: 1;
-    text-align: right;
-}
-
-.vision-img {
-    max-width: 100%;
-    height: auto;
-}
-
-    @media (max-width: 768px) {
-
-    .vision-row {
-        flex-direction: column;
+    .text-center-update {
         text-align: center;
     }
 
-    .vision-right {
-        text-align: center;
+    .overlay-update {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
     }
 
-    .vision-left h2 {
-        font-size: 24px;
+    /* SECTION STYLING */
+    .vision-hero-section-update {
+        position: relative;
+        padding: 100px 0;
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
     }
 
-    .vision-left p {
-        font-size: 15px;
+    .vision-hero-section-update .container-update {
+        position: relative;
+        z-index: 2;
     }
 
-    .vision-btn {
-        margin-top: 20px;
+    .vision-title-update {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .vision-main-update {
+        padding: 100px 0;
+    }
+
+    .vision-row-update {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .vision-left-update {
+        flex: 1;
+    }
+
+    .vision-right-update {
+        flex: 1;
+        text-align: right;
+    }
+
+    .vision-img-update {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .vision-label-update {
         display: inline-block;
+        color: #006cff; /* Blue accent */
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
-}
 
+    /* RESPONSIVE STYLES */
+    @media (max-width: 768px) {
+        .vision-page-update {
+            padding-top: 100px;
+        }
+
+        .vision-row-update {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .vision-right-update {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .vision-title-update {
+            font-size: 32px;
+        }
+    }
 </style>
 
-<div class="site-content vision-page">
+<div class="site-content-update vision-page-update">
 
-    <!-- HERO SECTION (MATCHES YOUR SCREENSHOT STYLE) -->
-    <section class="vision-hero-section inner-header"
+    <section class="vision-hero-section-update"
              style="background-image: url('{{ url_for('static', filename='images/banner/inner-header/page-header-01.jpg') }}');">
-        <div class="overlay"></div>
+        <div class="overlay-update"></div>
 
-
-        <div class="container text-center">
-            <h1 class="vision-title">Our Vision</h1>
-            <p class="vision-subtitle">
+        <div class="container-update text-center-update">
+            <h1 class="vision-title-update">Our Vision</h1>
+            <p class="vision-subtitle-update">
                 Empowering businesses with intelligent, future-ready digital solutions.
             </p>
         </div>
     </section>
 
+    <section class="vision-main-update">
+        <div class="container-update vision-row-update">
 
-    <!-- MAIN SECTION (LEFT TEXT + RIGHT IMAGE) -->
-    <section class="vision-main">
-        <div class="container vision-row">
-
-            <!-- LEFT TEXT -->
-            <div class="vision-left">
-                <span class="vision-label">ABOUT US</span>
+            <div class="vision-left-update">
+                <span class="vision-label-update">ABOUT VISION</span>
                 <h2>Your Experience Matters the Most</h2>
 
                 <p>
-                    You’re not just a client — you're part of our mission. Our vision is to build modern,
+                    You’re not just a client — you're part of our journey. Our vision is to build modern,
                     scalable, and intuitive technology that elevates your business, strengthens your brand,
                     and gives your customers a better experience.
                 </p>
 
                 <p>
                     When things break, we fix them. When things work, we improve them. When you grow, we scale
-                    with you. Because your success defines our standards.
+                    with you. Because your success defines our standards and fuels our future.
                 </p>
-
-                <a href="{{ url_for('contact_us') }}" class="vision-btn">Learn More →</a>
             </div>
 
-            <!-- RIGHT IMAGE -->
-            <div class="vision-right">
-                <img src="{{ url_for('static', filename='images/our_vision.png') }}" alt="Vision" class="vision-img">
+            <div class="vision-right-update">
+                <img src="{{ url_for('static', filename='images/our_vision.png') }}" alt="Vision Image" class="vision-img-update">
             </div>
 
         </div>
     </section>
 
 </div>
-
 
 {% include 'footer.html' %}
 {% endblock %}

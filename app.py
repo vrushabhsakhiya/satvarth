@@ -21,6 +21,11 @@ mail = Mail(app)
 def index():
     return render_template('index.html') 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    # '404.html' ટેમ્પલેટ લોડ કરશે અને 404 સ્ટેટસ કોડ રિટર્ન કરશે
+    return render_template('error_404.html'), 404
+
 @app.route('/about_us')
 def about_us():
     return render_template('about_us.html')

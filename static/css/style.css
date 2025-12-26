@@ -511,7 +511,7 @@ blockquote.blockquote-style-1:before {
 
 @media (max-width: 575px) {
   .container{
-        padding-top: 100px;
+        padding-top: 5px;
     }
   h1 {
     font-size: 44px;
@@ -7653,7 +7653,7 @@ form.form-dark .form-control:focus {
 
   /* Main Banner 2 ----------*/
   .main-banner.main-banner-2 {
-    padding-top: 140px;
+    padding-top: 77px;
   }
 
   .main-banner.main-banner-2 .banner-inner {
@@ -8954,6 +8954,10 @@ form.form-dark .form-control:focus {
 }
 
 @media (max-width: 575px) {
+  .coming-soon-section {
+  height: 60vh;
+
+}
 
   /* Video BG Jarallax */
   .video-bg-jarallax {
@@ -9530,7 +9534,7 @@ form.form-dark .form-control:focus {
 
 @media (max-width: 575px) {
   .box-size{
-    min-height: 350px;
+    min-height: 280px;
   }
   .blog-single .post-content-header .blog-single-info {
     flex-wrap: wrap;

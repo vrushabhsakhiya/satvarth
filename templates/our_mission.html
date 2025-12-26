@@ -2,58 +2,166 @@
 {% block content %}
 
 {% include 'sidepanel.html' %}
+<style>
+    /* SPACE BETWEEN NAVBAR AND BODY */
+    .mission-page-update {
+        padding-top: 120px; /* Adjust this value to increase/decrease space from navbar */
+    }
 
-<div class="site-content mission-page">
+    /* CUSTOM LAYOUT CLASSES (Renamed to avoid Bootstrap defaults) */
+    .container-update {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
 
-    <!-- ==========================
-         HERO SECTION
-    =========================== -->
-    <section class="vision-hero-section inner-header"
+    .text-center-update {
+        text-align: center;
+    }
+
+    .overlay-update {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Darkens the hero image */
+        z-index: 1;
+    }
+
+    /* SECTION STYLING */
+    .mission-hero-section-update {
+        position: relative;
+        padding: 100px 0;
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+    }
+
+    /* Ensure content stays above the overlay */
+    .mission-hero-section-update .container-update {
+        position: relative;
+        z-index: 2;
+    }
+
+    .mission-title-update {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .mission-main-update {
+        padding: 100px 0;
+    }
+
+    .mission-row-update {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .mission-left-update {
+        flex: 1;
+    }
+
+    .mission-right-update {
+        flex: 1;
+        text-align: right;
+    }
+
+    .mission-img-update {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px; /* Optional: adds rounded corners to your image */
+    }
+
+    .mission-label-update {
+        display: inline-block;
+        color: #006cff; /* Example accent color */
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .mission-btn-update {
+        margin-top: 30px;
+        display: inline-block;
+        padding: 15px 35px;
+        background-color: #006cff;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: 0.3s ease;
+    }
+
+    .mission-btn-update:hover {
+        background-color: #6aa4f7;
+        color: #fff;
+    }
+
+    /* RESPONSIVE STYLES */
+    @media (max-width: 768px) {
+        .mission-page-update {
+            padding-top: 100px; /* Smaller gap for mobile */
+        }
+
+        .mission-row-update {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .mission-right-update {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .mission-title-update {
+            font-size: 32px;
+        }
+    }
+</style>
+
+<div class="site-content-update mission-page-update">
+
+    <section class="mission-hero-section-update"
              style="background-image: url('{{ url_for('static', filename='images/banner/inner-header/page-header-01.jpg') }}');">
-        <div class="overlay"></div>
+        <div class="overlay-update"></div>
 
-        <div class="container text-center">
-            <h1 class="mission-title">Our Mission</h1>
-            <p class="mission-subtitle">
-                Delivering reliable, scalable and intelligent solutions that drive real business impact.
+        <div class="container-update text-center-update">
+            <h1 class="mission-title-update">Our Mission</h1>
+            <p class="mission-subtitle-update">
+                Delivering excellence through innovation, integrity, and a client-first approach.
             </p>
         </div>
     </section>
 
+    <section class="mission-main-update">
+        <div class="container-update mission-row-update">
 
-    <!-- ==========================
-         MAIN SECTION
-    =========================== -->
-    <section class="mission-main">
-        <div class="container mission-row">
-
-            <!-- LEFT TEXT -->
-            <div class="mission-left">
-                <span class="mission-label">OUR PURPOSE</span>
-
-                <h2>We Build Technology That Works for You — Not Against You</h2>
+            <div class="mission-left-update">
+                <span class="mission-label-update">Our Purpose</span>
+                <h2>Driven by Innovation, Guided by Quality</h2>
 
                 <p>
-                    Our mission is simple: create digital products that enhance efficiency, reduce operational friction,
-                    and elevate user experience. We focus on building systems that are stable, scalable, and easy to use.
+                    Our mission is to bridge the gap between complex technology and business growth. 
+                    We are dedicated to providing accessible, high-performance digital tools that 
+                    simplify workflows and empower teams to reach their full potential.
                 </p>
 
                 <p>
-                    Whether you're expanding your services, improving internal workflows, or enhancing customer journeys,
-                    our mission is to ensure your technology becomes a true advantage — not an obstacle.
+                    We believe in transparency, constant evolution, and building long-term partnerships. 
+                    Every solution we build is aimed at making your business more efficient and competitive.
                 </p>
 
-                <p>
-                    We don’t just deliver software.  
-                    We deliver **impact**.
-                </p>
-
-                <a href="{{ url_for('team') }}" class="mission-btn">Talk to Our Team →</a>
+                
             </div>
 
-            <!-- RIGHT IMAGE -->
-            <div class="mission-right">
-                <img src="{{ url_for('static', filename='images/our_mission.png') }}" alt="Mission Image" class="mission-img">
+            <div class="mission-right-update">
+                <img src="{{ url_for('static', filename='images/our_mission.png') }}" alt="Mission Image" class="mission-img-update">
             </div>
 
         </div>
@@ -61,283 +169,5 @@
 
 </div>
 
-<style>
-/* ===========================================
-   OUR MISSION PAGE (Dark + Blue Tech Style)
-=========================================== */
-
-.mission-page {
-    background: #000e1d;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-}
-
-/* HERO SECTION */
-.mission-hero-section {
-    position: relative;
-    padding: 150px 0 120px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.mission-hero-section .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.4),
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.85)
-    );
-}
-
-.mission-hero-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-.mission-title {
-    font-size: 52px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.mission-subtitle {
-    font-size: 18px;
-    color: #d5e0f0;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-
-/* MAIN SECTION */
-.mission-main {
-    padding: 90px 0;
-    background: #000814;
-}
-
-.mission-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.mission-label {
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 600;
-    color: #4da8ff;
-}
-
-.mission-left h2 {
-    font-size: 40px;
-    font-weight: 700;
-    margin: 18px 0 20px;
-}
-
-.mission-left p {
-    color: #d4e1ef;
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-
-/* BUTTON */
-.mission-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    color: #4da8ff;
-    border: 1px solid #4da8ff;
-    transition: all 0.3s ease;
-}
-
-.mission-btn:hover {
-    background: #4da8ff;
-    color: #001020;
-}
-
-
-/* RIGHT IMAGE */
-.mission-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 18px rgba(0, 150, 255, 0.35);
-}
-
-/* ==========================
-   RESPONSIVE BREAKPOINTS
-========================== */
-
-/* <= 1400px : large desktop / small laptop */
-@media (max-width: 1400px) {
-    .mission-hero-section {
-        padding: 130px 0 100px;
-    }
-
-    .mission-title {
-        font-size: 46px;
-    }
-
-    .mission-left h2 {
-        font-size: 36px;
-    }
-
-    .mission-row {
-        gap: 50px;
-    }
-}
-
-/* <= 1199px : laptop / big tablet landscape */
-@media (max-width: 1199px) {
-    .mission-hero-section {
-        padding: 120px 0 90px;
-    }
-
-    .mission-title {
-        font-size: 40px;
-    }
-
-    .mission-subtitle {
-        font-size: 16px;
-        max-width: 550px;
-    }
-
-    .mission-main {
-        padding: 70px 0;
-    }
-
-    .mission-row {
-        gap: 40px;
-    }
-
-    .mission-left h2 {
-        font-size: 32px;
-    }
-
-    .mission-left p {
-        font-size: 14px;
-    }
-}
-
-/* <= 991px : tablet (two columns become one) */
-@media (max-width: 991px) {
-    .mission-hero-section {
-        padding: 110px 0 80px;
-        text-align: center;
-    }
-
-    .mission-title {
-        font-size: 36px;
-    }
-
-    .mission-subtitle {
-        font-size: 15px;
-        max-width: 500px;
-    }
-
-    .mission-main {
-        padding: 60px 0;
-    }
-
-    .mission-row {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .mission-left h2 {
-        font-size: 30px;
-    }
-
-    .mission-left p {
-        font-size: 14px;
-    }
-
-    .mission-img {
-        max-width: 420px;
-        margin: 20px auto 0;
-    }
-}
-
-/* <= 767px : mobile portrait (small tablets / large phones) */
-@media (max-width: 767px) {
-    .mission-hero-section {
-        padding: 100px 0 70px;
-    }
-
-    .mission-title {
-        font-size: 30px;
-    }
-
-    .mission-subtitle {
-        font-size: 14px;
-        padding: 0 15px;
-    }
-
-    .mission-main {
-        padding: 50px 0;
-    }
-
-    .mission-left h2 {
-        font-size: 26px;
-    }
-
-    .mission-left p {
-        font-size: 13px;
-    }
-
-    .mission-btn {
-        padding: 10px 22px;
-        font-size: 13px;
-    }
-
-    .mission-row {
-        gap: 25px;
-    }
-}
-
-/* <= 575px : small phones */
-@media (max-width: 575px) {
-    
-    .mission-hero-section {
-        padding: 90px 0 60px;
-    }
-
-    .mission-title {
-        font-size: 26px;
-    }
-
-    .mission-subtitle {
-        font-size: 13px;
-    }
-
-    .mission-main {
-        padding: 40px 0;
-    }
-
-    .mission-left h2 {
-        font-size: 22px;
-    }
-
-    .mission-left p {
-        font-size: 12px;
-    }
-
-    .mission-btn {
-        width: 100%;
-        max-width: 260px;
-        padding: 10px 0;
-    }
-
-    .mission-img {
-        max-width: 360px;
-        margin: 18px auto 0;
-    }
-}
-</style>
+{% include 'footer.html' %}
 {% endblock %}
